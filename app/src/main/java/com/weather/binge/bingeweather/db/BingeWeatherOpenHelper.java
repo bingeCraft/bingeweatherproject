@@ -13,7 +13,7 @@ public class BingeWeatherOpenHelper extends SQLiteOpenHelper {
      * Province表建表语句
      */
     public static final String CREATE_PROVINCE = "create table Province (" +
-            "id integer primary key autoincrement" +
+            "id integer primary key autoincrement," +
             "province_name text," +
             "province_code text)";
 
@@ -32,7 +32,7 @@ public class BingeWeatherOpenHelper extends SQLiteOpenHelper {
     public static final String CREATE_COUNTY = "create table County (" +
             "id integer primary key autoincrement," +
             "county_name text," +
-            "county_code text" +
+            "county_code text," +
             "city_id integer)";
 
     public BingeWeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
