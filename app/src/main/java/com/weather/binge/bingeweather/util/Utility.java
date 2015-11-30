@@ -1,6 +1,5 @@
 package com.weather.binge.bingeweather.util;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -100,6 +99,7 @@ public class Utility {
             String temp2 = weatherInfo.getString("temp2");
             String weatherDesp = weatherInfo.getString("weather");
             String publishTime = weatherInfo.getString("ptime");
+            System.out.println(weatherDesp);
             saveWeatherInfo(context, cityName, weatherCode, temp1, temp2, weatherDesp, publishTime);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -113,6 +113,7 @@ public class Utility {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年M月d日", Locale.CHINA);
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.putBoolean("city_selected", true);
+        editor.putString("city_name", cityName);
         editor.putString("weather_code", weatherCode);
         editor.putString("temp1", temp1);
         editor.putString("temp2", temp2);
